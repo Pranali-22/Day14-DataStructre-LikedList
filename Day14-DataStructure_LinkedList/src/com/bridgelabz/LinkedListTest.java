@@ -21,7 +21,6 @@ public class LinkedListTest {
 	        NodeClass<Integer> firstNode = new NodeClass<Integer>(56);
 	        NodeClass<Integer> secondNode = new NodeClass<Integer>(30);
 	        NodeClass<Integer> thirdNode = new NodeClass<Integer>(70);
-	       
 	        
 	        NodeClass<Integer> nodeList = new NodeClass<Integer>();
 	        
@@ -45,7 +44,10 @@ public class LinkedListTest {
 	        
 	        
 	        //Delete first element in linked list
-	        nodeList.pop();
+	        //nodeList.pop();
+	        
+	        //Delete last element in linked list
+	        nodeList.popLast();
 	        
 	        //display the linked list
 	        System.out.println("\nDisplaying Entire Linked list");

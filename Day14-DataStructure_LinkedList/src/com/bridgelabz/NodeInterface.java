@@ -18,5 +18,7 @@ public interface NodeInterface {
 	public void addNodeAtMiddle(NodeClass node1, NodeClass node2, NodeClass nodeToAdd);
 	
 	public void pop();
+	
+	public void popLast();
 
 }

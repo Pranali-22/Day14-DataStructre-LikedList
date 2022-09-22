@@ -2,6 +2,7 @@
  * 
  */
 package com.bridgelabz;
+import java.util.*;
 
 /**
  * @author Dell
@@ -130,4 +131,19 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	    	System.out.println("\nLinked list after pop ");
 	    	this.displayLinkedList();
 	    }
+
+		public void popLast() {
+			if(head == null) {
+	    		System.out.println("Empty Linked list"); 
+	    	}
+	    	else {
+	    		NodeClass temp = head;
+	    		while(temp.next.next != null) {
+	    			temp = temp.next;
+	    		}
+	    		temp.next = null;
+	    	}
+	    	System.out.println("\nLinked list after poping last node ");
+	    	this.displayLinkedList();
+		}
 }
