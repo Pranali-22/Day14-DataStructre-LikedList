@@ -22,14 +22,20 @@ public class LinkedListTest {
 	        NodeClass<Integer> secondNode = new NodeClass<Integer>(30);
 	        NodeClass<Integer> thirdNode = new NodeClass<Integer>(70);
 	       
-	        // add nodes to nodeList
+	        
 	        NodeClass<Integer> nodeList = new NodeClass<Integer>();
 	        
-	        nodeList.addNodeAtStart(thirdNode);
+	        /*// add nodes at start to nodeList 
+	        nodeList.addNodeAtStart(thirdNode);	        
+	        nodeList.addNodeAtStart(secondNode);	        
+	        nodeList.addNodeAtStart(firstNode);    
+	        */
 	        
-	        nodeList.addNodeAtStart(secondNode);
+	        // add nodes at end of nodeList 
+	        nodeList.addNodeAtEnd(firstNode);	        
+	        nodeList.addNodeAtEnd(secondNode);	        
+	        nodeList.addNodeAtEnd(thirdNode);
 	        
-	        nodeList.addNodeAtStart(firstNode);        	               
 	        
 	        //display the linked list
 	        System.out.println("\nDisplaying Entire Linked list");

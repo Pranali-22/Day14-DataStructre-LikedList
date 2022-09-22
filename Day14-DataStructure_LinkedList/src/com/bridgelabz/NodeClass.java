@@ -12,6 +12,7 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	    private K key;
 	    private NodeClass next;
 		private NodeClass head; 
+		private NodeClass tail;
 	   
 		//Constructors
 		public NodeClass(K key) {
@@ -52,6 +53,7 @@ public class NodeClass<K extends Object> implements NodeInterface{
 			this.head = head;
 		}
 	    
+	    //function to display linked list
 	    public void displayLinkedList()
 	    {
 	        if(head == null)
@@ -66,6 +68,7 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	        }
 	    }
 
+	    //Function to add node at start of linked list
 	    public void addNodeAtStart(NodeClass newNode)
 	    {
 	        if (head == null)
@@ -79,6 +82,24 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	            newNode.next = temp;
 	        }
 	        System.out.println("\nLinked list after adding "+newNode.key+" at start");
+	    	this.displayLinkedList();
+	    }
+	    
+	    ////Function to add node at end of linked list
+	    public void addNodeAtEnd(NodeClass newNode)
+	    {
+	    	if ( head == null){
+	            head = newNode;
+	            tail = newNode;
+	            newNode.next = null;
+	        }
+	    	else{
+	    		
+	            tail.next = newNode;
+	            newNode.next =null;
+	            tail = tail.next;
+	        }
+	        System.out.println("\nLinked list after adding "+newNode.key+" at end");
 	    	this.displayLinkedList();
 
 	    }
