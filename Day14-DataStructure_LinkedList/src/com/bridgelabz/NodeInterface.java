@@ -14,5 +14,7 @@ public interface NodeInterface {
 	public void addNodeAtStart(NodeClass node);
 	
 	public void addNodeAtEnd(NodeClass node);
+	
+	public void addNodeAtMiddle(NodeClass node1, NodeClass node2, NodeClass nodeToAdd);
 
 }

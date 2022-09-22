@@ -105,4 +105,16 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	    	this.displayLinkedList();
 
 	    }
+	    
+	    ////Function to add node at middle of linked list
+	    public void addNodeAtMiddle(NodeClass node1, NodeClass node2, NodeClass nodeToAdd) {
+	    	System.out.println("\nLinked list before adding "+nodeToAdd.key+" in middle");
+	    	this.displayLinkedList();
+	    	
+	    	node1.next = nodeToAdd;
+	    	nodeToAdd.next =  node2;
+	    	
+	    	System.out.println("\nLinked list after adding "+nodeToAdd.key+" in middle");
+	    	this.displayLinkedList();
+	    }
 }
