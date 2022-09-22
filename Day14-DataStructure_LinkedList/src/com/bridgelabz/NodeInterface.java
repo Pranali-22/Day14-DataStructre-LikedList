@@ -5,9 +5,10 @@ package com.bridgelabz;
 
 /**
  * @author Dell
+ * @param <K>
  *
  */
-public interface NodeInterface {
+public interface NodeInterface<K> {
 	
 	public void displayLinkedList();
 	
@@ -20,5 +21,7 @@ public interface NodeInterface {
 	public void pop();
 	
 	public void popLast();
+	
+	public void findNodeUsingKey(Integer searchKey);
 
 }

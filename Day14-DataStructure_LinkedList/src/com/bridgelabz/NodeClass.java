@@ -132,6 +132,7 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	    	this.displayLinkedList();
 	    }
 
+	    //Function to remove last node from linked list
 		public void popLast() {
 			if(head == null) {
 	    		System.out.println("Empty Linked list"); 
@@ -145,5 +146,23 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	    	}
 	    	System.out.println("\nLinked list after poping last node ");
 	    	this.displayLinkedList();
+		}
+		
+		//Function to search for a key
+		public void findNodeUsingKey(Integer searchKey) {
+			
+			if(head == null) {
+	    		System.out.println("Empty Linked list"); 
+	    	}
+			NodeClass temp = head;
+			while(head!=null) {
+				if(temp.key == searchKey) {
+					System.out.println("Key "+temp.key+" found.");
+					return; 
+				}
+				
+				temp = temp.next;
+				
+			}
 		}
 }

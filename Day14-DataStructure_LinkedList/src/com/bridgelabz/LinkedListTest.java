@@ -47,7 +47,12 @@ public class LinkedListTest {
 	        //nodeList.pop();
 	        
 	        //Delete last element in linked list
-	        nodeList.popLast();
+	        //nodeList.popLast();
+	        
+	        System.out.println();
+	        
+	        //Search for key value 30
+	        nodeList.findNodeUsingKey(30);
 	        
 	        //display the linked list
 	        System.out.println("\nDisplaying Entire Linked list");
