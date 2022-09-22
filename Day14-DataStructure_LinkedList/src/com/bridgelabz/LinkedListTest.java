@@ -2,7 +2,7 @@
  * 
  */
 package com.bridgelabz;
-
+import java.util.*;
 
 /**
  * @author Dell
@@ -32,15 +32,20 @@ public class LinkedListTest {
 	        */
 	        
 	        // add nodes at end of nodeList 
-	       /* nodeList.addNodeAtEnd(firstNode);	        
+	        nodeList.addNodeAtEnd(firstNode);	        
 	        nodeList.addNodeAtEnd(secondNode);	        
 	        nodeList.addNodeAtEnd(thirdNode);
-	        */
+	        
 	        
 	        //add node at middle of linked list
-	        nodeList.addNodeAtEnd(firstNode);	        
+	        /*nodeList.addNodeAtEnd(firstNode);	        
 	        nodeList.addNodeAtEnd(thirdNode);
 	        nodeList.addNodeAtMiddle(firstNode, thirdNode, secondNode);
+	        */
+	        
+	        
+	        //Delete first element in linked list
+	        nodeList.pop();
 	        
 	        //display the linked list
 	        System.out.println("\nDisplaying Entire Linked list");

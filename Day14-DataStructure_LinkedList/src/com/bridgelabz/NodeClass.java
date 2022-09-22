@@ -117,4 +117,17 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	    	System.out.println("\nLinked list after adding "+nodeToAdd.key+" in middle");
 	    	this.displayLinkedList();
 	    }
+	    
+	    //Function to delete first node from linked list
+	    
+	    public void pop() {
+	    	if(head == null) {
+	    		System.out.println("Empty Linked list"); 
+	    	}
+	    	else {
+	    		head = head.next;
+	    	}
+	    	System.out.println("\nLinked list after pop ");
+	    	this.displayLinkedList();
+	    }
 }
