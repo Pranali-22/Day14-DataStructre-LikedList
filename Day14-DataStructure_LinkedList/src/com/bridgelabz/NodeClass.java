@@ -20,12 +20,14 @@ public class NodeClass<K extends Object> implements NodeInterface{
 	        this.key = key;
 	        this.next = null;
 	        this.head = null;
+	        this.tail = null;
 	    }
 	   
 	    public NodeClass() {
 	    	this.key = null;
 	        this.next = null;
 	        this.head = null;
+	        this.tail = null;
 		}
 
 		//getter and setter methods
