@@ -10,6 +10,8 @@ package com.bridgelabz;
  */
 public interface NodeInterface<K> {
 	
+	public void addNode(NodeClass node);
+	
 	public void displayLinkedList();
 	
 	public void addNodeAtStart(NodeClass node);
@@ -22,6 +24,8 @@ public interface NodeInterface<K> {
 	
 	public void popLast();
 	
-	public void findNodeUsingKey(Integer searchKey);
+	public NodeClass findNodeUsingKey(Integer searchKey);
+	
+	public void removeNode(Integer searchKey);
 
 }

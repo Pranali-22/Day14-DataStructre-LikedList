@@ -8,7 +8,7 @@ import java.util.*;
  * @author Dell
  *
  */
-public class NodeClass<K extends Object> implements NodeInterface{
+public class NodeClass<K extends Comparable<K>> implements NodeInterface{
 
 	    private K key;
 	    private NodeClass next;
@@ -56,6 +56,7 @@ public class NodeClass<K extends Object> implements NodeInterface{
 			this.head = head;
 		}
 	    
+	    	    
 	    //function to display linked list
 	    public void displayLinkedList()
 	    {
@@ -69,6 +70,7 @@ public class NodeClass<K extends Object> implements NodeInterface{
 		    	}
 		    	System.out.print(node.getKey());
 	        }
+	        System.out.println();
 	    }
 
 	    //Function to add node at start of linked list
@@ -149,20 +151,44 @@ public class NodeClass<K extends Object> implements NodeInterface{
 		}
 		
 		//Function to search for a key
-		public void findNodeUsingKey(Integer searchKey) {
-			
+		public NodeClass findNodeUsingKey(Integer searchKey) {			
 			if(head == null) {
 	    		System.out.println("Empty Linked list"); 
+	    		return null;
 	    	}
 			NodeClass temp = head;
 			while(head!=null) {
 				if(temp.key == searchKey) {
 					System.out.println("Key "+temp.key+" found.");
-					return; 
+					return temp; 
 				}
 				
-				temp = temp.next;
-				
+				temp = temp.next;				
 			}
+			return null;
 		}
+		
+		
+		//Add node to linkedlist
+	    public void addNode(NodeClass newNode) {
+	    	  
+	    	NodeClass<K> resultNode = findNodeUsingKey(30);	    	
+	    	newNode.next =  resultNode.next;
+	    	resultNode.next = newNode;
+	    }
+	    
+	    //Delete any node from linkedlist
+	    public void removeNode(Integer searchKey) {
+	  
+	    	NodeClass<K> currentNode = head;
+	    	while(head!=null) {
+	    	
+				if(currentNode.next.key == searchKey) {
+					currentNode.next = currentNode.next.next;
+					return;
+				}			
+				currentNode = currentNode.next;				
+			}	    
+	    }
+
 }
