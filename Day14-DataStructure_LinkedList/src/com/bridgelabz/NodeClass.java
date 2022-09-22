@@ -7,40 +7,79 @@ package com.bridgelabz;
  * @author Dell
  *
  */
-public class NodeClass<K extends Object> {
+public class NodeClass<K extends Object> implements NodeInterface{
 
 	    private K key;
-	    private NodeClass next;  
+	    private NodeClass next;
+		private NodeClass head; 
 	   
-	    public NodeClass(K key) {
-	       
+		//Constructors
+		public NodeClass(K key) {
+		       
 	        this.key = key;
 	        this.next = null;
+	        this.head = null;
 	    }
 	   
 	    public NodeClass() {
 	    	this.key = null;
 	        this.next = null;
+	        this.head = null;
 		}
 
+		//getter and setter methods
 		public K getKey() {
 			return key;
 		}
-
-		// link  node to next of current node
-	    public void setNext(NodeClass<K> nextNode) {
-			this.next = nextNode;
-			
+		
+		public void setKey(K key) {
+			this.key = key;
 		}
-	    
-	    //Display linked list
-	    public void displayLinkedList() {
-	    	NodeClass<K> node = this;
-	    	while(node.next != null){	    		
-	    		System.out.print(node.getKey()+" -> ");
-	    		node = node.next;	    		
-	    	}
-	    	System.out.print(node.getKey());
+		
+	    public NodeClass<K> getNext() {
+			return next;
 	    }
 
+	    public void setNext(NodeClass<K> nextNode) {
+	    	nextNode.next = this;		
+		}
+	    
+	    public NodeClass<K> getHead() {
+			return head;
+		}
+	    
+	    public void setHead(NodeClass<K> head) {
+			this.head = head;
+		}
+	    
+	    public void displayLinkedList()
+	    {
+	        if(head == null)
+	            System.out.println("Empty Linked list");
+	        else{
+	        	NodeClass<K> node = this.getHead();
+		    	while(node.next != null){	    		
+		    		System.out.print(node.getKey()+" -> ");
+		    		node = node.next;	    		
+		    	}
+		    	System.out.print(node.getKey());
+	        }
+	    }
+
+	    public void addNodeAtStart(NodeClass newNode)
+	    {
+	        if (head == null)
+	        {
+	            head = newNode;
+	            newNode.next = null;
+	        }else
+	        {
+	            NodeClass temp = head;
+	            head = newNode;
+	            newNode.next = temp;
+	        }
+	        System.out.println("\nLinked list after adding "+newNode.key+" at start");
+	    	this.displayLinkedList();
+
+	    }
 }
