@@ -27,5 +27,8 @@ public interface NodeInterface<K> {
 	public NodeClass findNodeUsingKey(Integer searchKey);
 	
 	public void removeNode(Integer searchKey);
+	
+	public void AddNodeInAscendingOrder(NodeClass node);
+	
 
 }

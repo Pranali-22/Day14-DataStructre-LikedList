@@ -190,5 +190,32 @@ public class NodeClass<K extends Comparable<K>> implements NodeInterface{
 				currentNode = currentNode.next;				
 			}	    
 	    }
+	    
+	    //Add nodes in ascending order
+	    public void AddNodeInAscendingOrder(NodeClass newNode) {
+	    	
+	    	if ( head == null){
+	            head = newNode;
+	            head.next = null;
+	        }
+	    	else if(head.key.compareTo((K) newNode.key) > 0) {
+	    		newNode.next = head;
+	    		head = newNode;
+	    	}
+	    	else{   
+	    		NodeClass<K> tempPrevious = head;
+	    		NodeClass<K> tempCurrent = head.next;
+	    		while(tempCurrent != tail && tempCurrent.key.compareTo((K) newNode.key) < 0) {
+	    			tempPrevious = tempCurrent;
+	    			tempCurrent =  tempCurrent.next;
+	    		}
+	    		 
+	    		tempPrevious.next = newNode;
+	    		newNode.next = tempCurrent;
+	    		      
+	        }
+	        System.out.println("\nLinked list after adding "+newNode.key);
+	    	this.displayLinkedList();
+	    }
 
 }
